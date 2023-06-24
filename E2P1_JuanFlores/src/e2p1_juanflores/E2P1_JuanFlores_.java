@@ -118,7 +118,7 @@ public class E2P1_JuanFlores_ extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        int cont=0;
         boolean Sub = true;
         
         while(Sub){
@@ -132,32 +132,56 @@ public class E2P1_JuanFlores_ extends javax.swing.JFrame {
             int opcion=leer.nextInt();
            switch(opcion){
                case 1:
+                   cont++;
                    System.out.println("Ingrese un numero: ");
                    int num = leer.nextInt();
-                   Lista.get(num);
-                   while(num<1){
+                   
+                   while(num<=1){
                        System.out.println("Ingrese un numero positivo: ");
                        num=leer.nextInt();
+                       
                    }
                    
                    System.out.println("Ingrese la base del numero a convertir: ");
                    int bas=leer.nextInt();
-                   Lista.get(bas);
+                   
                    
                    while(bas<2||bas>35){
                        System.out.println("Ingrese una base correcto [2-35]: ");
-                       bas=leer.nextInt();                       
+                       bas=leer.nextInt(); 
+                       
                    }
+                   Numero nums = new Numero(bas,num);
                    
-                   Lista.add(M);
+                   Lista.add(nums);
                    
                    
                    
-                   System.out.println("Obrigado deus agreguiet exit");
+                   System.out.println("Numero agregado correctamente");
+                   
+                   
+                   
+                   
+                   
                    break;
                    
                case 2:
+                   if(cont>0){
+                   M.Print(Lista);
                    
+                   System.out.println("Ingrese el indice del numero que desea eliminar: ");
+                   int ind=leer.nextInt();
+                   
+                   while(ind>Lista.size()){
+                       System.out.println("ingrese un indice menor");
+                       ind=leer.nextInt();
+                       
+                   }
+                   
+                   M.Eliminar(Lista, ind);
+                   }else{
+                       System.out.println("debes agregar un valor primero...");
+                   }
                    break;
                    
                case 3:
@@ -183,6 +207,7 @@ public class E2P1_JuanFlores_ extends javax.swing.JFrame {
         boolean SubM = true;
         
         while(SubM){
+            
             System.out.println("""
                                1.Sumar numeros
                                2.Restar numeros
@@ -194,14 +219,17 @@ public class E2P1_JuanFlores_ extends javax.swing.JFrame {
            switch(opcionM){
                case 1:
                    
+                   System.out.println("suma");
+                   System.out.println("Ingrese");
                    break;
                    
                case 2:
+                   System.out.println("restar");
                    
                    break;
                    
                case 3:
-                   
+                   System.out.println("Multiplicacion");
                    
                    break;
                case 4:
